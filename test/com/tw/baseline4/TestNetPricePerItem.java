@@ -15,10 +15,18 @@ public class TestNetPricePerItem {
     }
 
     @Test
-    public void shouldHaveNetSalesTaxEqualToBasicSalesTaxIfItemIsNotImported() {
+    public void shouldHaveNetSalesTaxPerItemEqualToBasicSalesTaxIfItemIsNotImported() {
         Item item = new Item("Music CD", 2.33, 3);
         NetPricePerItem netPricePerItem = new NetPricePerItem(item);
 
         assertEquals(0.233, netPricePerItem.netSalesTaxCalculator(), 0.0001);
+    }
+
+    @Test
+    public void shouldHaveNetSalesTaxPerItemEqualToImportDutyIfItemIsImportedAndIsAFoodItem() {
+        Item item = new Item("imported chocolate", 5.66, 1);
+        NetPricePerItem netPricePerItem = new NetPricePerItem(item);
+
+        assertEquals(0.283, netPricePerItem.netSalesTaxCalculator(), 0.0001);
     }
 }
