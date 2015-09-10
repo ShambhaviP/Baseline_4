@@ -13,4 +13,12 @@ public class TestImportDuty {
 
         assertEquals(0.0, importDuty.importDutyApplicable(), 0.0001);
     }
+
+    @Test
+    public void shouldHaveFivePercentImportDutyOnImportedItems() {
+        Item item = new Item("imported pencil box", 5.66, 2);
+        ImportDuty importDuty = new ImportDuty(item);
+
+        assertEquals(0.283, importDuty.importDutyApplicable(), 0.0001);
+    }
 }
