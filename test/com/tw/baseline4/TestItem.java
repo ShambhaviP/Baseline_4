@@ -20,4 +20,11 @@ public class TestItem {
 
         assertEquals(1, item.getQuantity());
     }
+
+    @Test
+    public void shouldHaveAValidName() {
+        Item item = new Item("perfume bottle", 13.45, 2);
+
+        assertEquals("perfume bottle", item.getItemName());
+    }
 }

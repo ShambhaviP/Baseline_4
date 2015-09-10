@@ -20,4 +20,8 @@ public class Item {
     public int getQuantity() {
         return quantity;
     }
+
+    public String getItemName() {
+        return itemName;
+    }
 }
