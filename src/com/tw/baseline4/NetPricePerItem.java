@@ -14,8 +14,12 @@ public class NetPricePerItem {
         importDuty = new ImportDuty(item);
     }
 
-    public double netSalesTaxCalculator() {
+    public double netSalesTaxPerItemCalculator() {
       return  basicSalesTax.basicSalesTaxCalculator() + importDuty.importDutyApplicable();
 
+    }
+
+    public double netValuePerItemCalculator() {
+        return (this.netSalesTaxPerItemCalculator() + item.getItemPrice()) * item.getQuantity();
     }
 }
