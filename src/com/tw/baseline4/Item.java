@@ -7,7 +7,7 @@ public class Item {
     private double itemPrice;
     private int quantity;
     
-    Item(String itemName, double itemPrice, int quantity) {
+    public Item(String itemName, double itemPrice, int quantity) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.quantity = quantity;
@@ -15,5 +15,9 @@ public class Item {
 
     public double getItemPrice() {
         return itemPrice;
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 }

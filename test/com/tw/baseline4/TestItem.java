@@ -13,4 +13,11 @@ public class TestItem {
         assertEquals(0.12, item.getItemPrice(), 0.0001);
 
     }
+
+    @Test
+    public void shouldHaveAValidQuantity() {
+        Item item = new Item("Music CD", 12.50, 1);
+
+        assertEquals(1, item.getQuantity());
+    }
 }
