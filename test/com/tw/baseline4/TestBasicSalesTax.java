@@ -30,4 +30,11 @@ public class TestBasicSalesTax {
         assertEquals(0.0, basicSalesTax.basicSalesTaxCalculator(), 0.0001);
     }
 
+    @Test
+    public void shouldBeZeroForABook() {
+        Item item = new Item("book", 2.33, 1);
+        BasicSalesTax basicSalesTax = new BasicSalesTax(item);
+
+        assertEquals(0.0, basicSalesTax.basicSalesTaxCalculator(), 0.0001);
+    }
 }
