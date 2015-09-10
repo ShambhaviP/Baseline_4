@@ -29,4 +29,12 @@ public class TestNetPricePerItem {
 
         assertEquals(0.283, netPricePerItem.netSalesTaxCalculator(), 0.0001);
     }
+
+    @Test
+    public void shouldHaveNetSalesTaxPerItemEqualToTheSumOfBasicSalesTaxAndImportDutyIfItemIsImportedAndNotExemptedFromBasicSalesTax() {
+        Item item = new Item("imported bottle of perfume", 5.66, 1);
+        NetPricePerItem netPricePerItem = new NetPricePerItem(item);
+
+        assertEquals(0.849, netPricePerItem.netSalesTaxCalculator(), 0.0001);
+    }
 }
