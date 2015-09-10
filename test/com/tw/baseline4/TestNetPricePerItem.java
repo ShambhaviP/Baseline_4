@@ -13,4 +13,12 @@ public class TestNetPricePerItem {
 
         assertEquals(0.0, netPricePerItem.netSalesTaxCalculator(), 0.0001);
     }
+
+    @Test
+    public void shouldHaveNetSalesTaxEqualToBasicSalesTaxIfItemIsNotImported() {
+        Item item = new Item("Music CD", 2.33, 3);
+        NetPricePerItem netPricePerItem = new NetPricePerItem(item);
+
+        assertEquals(0.233, netPricePerItem.netSalesTaxCalculator(), 0.0001);
+    }
 }
